@@ -1,0 +1,67 @@
+body {
+  background: url('../images/vintage-toy-robot-natt.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.greeting, .trap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: larger;
+  font-weight: 900;
+  background-color: black;
+  color: aliceblue;
+}
+
+.greeting {
+  font-size: x-large;
+}
+
+.yes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: larger;
+  font-weight: 900;
+  margin: 10px;
+}
+
+.no {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: larger;
+  font-weight: 900;
+}
+
+button {
+  background-color: aliceblue;
+  height: 50px;
+  border-radius: 20%;
+}
+
+.response {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: larger;
+  font-weight: 900;
+  margin: 10px;
+}

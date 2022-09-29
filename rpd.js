@@ -77,7 +77,7 @@ function game(n) {
      alert(`The player won ${playerWins} games. The computer won ${computerWins} games.`);
 }
 
-// Run program
+
 let n = prompt("How many games would you like to play?");
 game(n);
 
