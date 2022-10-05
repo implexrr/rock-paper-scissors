@@ -13,8 +13,6 @@ body {
   background-size: cover;
   align-items: center;
   justify-content: ce∂nter;
-  height: 100vh;
-  width: 100vw;
   font-family: 'Roboto', sans-serif;
 
 }
@@ -44,6 +42,33 @@ button {
   font-weight: 900;
   font-size: large;
 }
+
+@keyframes animatedBackground {
+  from {
+    background-position: 0% 0%;
+  }
+  20% {
+    background-position: 20% 100%;
+  }
+  40% {
+    background-position: 40% 0%;
+  }
+  60% {
+    background-position: 60% 100%
+  }
+  80% {
+    background-position: 80% 0%
+  }
+  100% {
+    background-position: 100% 100%
+  }
+}
+
+.rock:hover, .paper:hover, .scissors:hover {
+  background-repeat: repeat-x repeat-y;
+  animation: animatedBackground 10s ease-in-out infinite;
+}
+
 .rock {
   background-image: url(../images/rock.png);
 }
@@ -56,3 +81,8 @@ button {
   background-image: url(../images/scissors.png);
 }
 
+
+#deep_blue {
+  height: 150px;
+  width: 150px;
+}

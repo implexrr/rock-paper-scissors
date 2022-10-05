@@ -80,4 +80,3 @@ function game(n) {
 
 let n = prompt("How many games would you like to play?");
 game(n);
-
