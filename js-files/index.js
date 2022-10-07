@@ -22,7 +22,7 @@ function redact_taunt (e) {
   e.target.textContent="Mean yes";
 }
 function play(e) {
-  location.href = "rps.html";
+  location.href = "../html-files/rps.html";
 }
 
 // Nice yes button
