@@ -5,7 +5,7 @@ deep_blue.addEventListener('click', gg_no_re);
 
 function warning (e) {
   e.target.textContent = 'Are you sure you wanna catch these robo-hands?';
-  e.target.style.backgroundImage = "url('../images/uwotm8.png')";
+  e.target.style.backgroundImage = "url('/images/uwotm8.png')";
   e.target.style.backgroundSize = "100% 100%";
   e.target.classList.add("computer_text");
   e.target.style.boxShadow = "inset 0 0 0 1000px rgba(0,0,0,.3)";
@@ -21,7 +21,7 @@ function redact_warning (e) {
 }
 
 function gg_no_re (e) {
-  location.href = "../html-files/deepblue.html";
+  location.href = "/html-files/deepblue.html";
 }
 
 const computer_buttons = document.querySelector('.computer_buttons');
@@ -37,11 +37,11 @@ function is_allowed (e) {
   let response = document.createElement("img");
   let response_msg = document.createElement("div");
   if ((e.target.parentNode.classList[0]) == 'computer_buttons') {
-    response.src = "../gifs/angry_bender.gif";
+    response.src = "/gifs/angry_bender.gif";
     response_msg.textContent = "HEY! You're not allowed to make my choice for me >:(";
   }
   else {
-    response.src = "../gifs/bender.gif";
+    response.src = "/gifs/bender.gif";
     response_msg.textContent = "Thinking . . .";
   }
 
