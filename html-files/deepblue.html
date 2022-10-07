@@ -4,10 +4,50 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Rock! Paper! Scissors!</title>
   <link rel="stylesheet" href="/css-files/deepblue.css">
 </head>
 <body>
-  shamalanmslda
+  <div class="duel">
+    <div class="human choice">
+      <div class="human prompt player_text">
+        Choose your weapon:
+      </div>
+      <div class="player_buttons">
+        <button class="rock">Rock</button>
+        <button class="paper">Paper</button>    
+        <button class="scissors">Scissors</button>
+      </div>
+    </div>
+    <div class="computer choice">
+      <div class="computer prompt computer_text">
+        Computer chooses:
+      </div>
+      <div class="computer_buttons">
+        <button class="rock">Rock</button>
+        <button class="paper">Paper</button>
+        <button class="scissors">Scissors</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="results">
+    <div class="player_text">
+      <div>Number of games won by player: </div>
+      <div id="wins"></div>
+    </div>
+    <div class="computer_text">
+      <div>Number of games won by computer: </div>
+      <div id="losses"></div>
+    </div>
+    <div class="other_text">
+      <div>Ties:</div>
+      <div id="ties"></div>
+    </div>
+  </div>
+  <button id="deep_blue">
+    Take me back please!
+  </button>
 </body>
+<script src="/js-files/deepblue.js"></script>
 </html>

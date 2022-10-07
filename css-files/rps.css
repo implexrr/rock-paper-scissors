@@ -12,7 +12,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   align-items: center;
-  justify-content: ce∂nter;
+  justify-content: center;
   font-family: 'Roboto', sans-serif;
 
 }
@@ -29,10 +29,11 @@ button {
   margin-bottom: 10px;
 }
 
-.computer_text, .player_text {
+.computer_text, .player_text, .other_text {
   color: beige;
   font-size: 20px;
   font-weight: 900;
+  display: flex;
 }
 
 .rock, .paper, .scissors {
@@ -85,4 +86,13 @@ button {
 #deep_blue {
   height: 150px;
   width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chosen {
+  box-shadow:
+    inset 0 0 0 1000px rgba(0,0,0,.3),
+    0 0 30px 10px rgb(88, 136, 218);
 }
