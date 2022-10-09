@@ -35,6 +35,7 @@ for (let i = 0; i < player_buttons.length; i++) {
   player_buttons[i].addEventListener('click', is_allowed);
 }
 
+
 // Respond with series of images/messages depending on which RPS buttons clicked
 function is_allowed (e) {
   const duel = document.querySelector('.duel');
@@ -73,6 +74,7 @@ function is_allowed (e) {
     play_round(e);
   }
 
+  // Display response
   body.appendChild(response);
   body.appendChild(response_msg);
 
@@ -180,6 +182,9 @@ function play_round (e) {
   losses.textContent = loss_count;
   ties.textContent = tie_count;
 }
+
+
+
 
 // Redirections
 function redirect_gg_no_re (e) {

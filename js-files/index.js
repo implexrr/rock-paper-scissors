@@ -8,6 +8,7 @@ mean_yes.addEventListener("click", redirect_play);
 // Select all the buttons that we want to fade away when we mouse over the mean_yes button
 const to_fade_mean = document.querySelectorAll(".fade_mean");
 
+
 // Fade out all buttons except for the mean_yes button
 function taunt (e) {
   for (let i = 0; i < to_fade_mean.length; i++) {
