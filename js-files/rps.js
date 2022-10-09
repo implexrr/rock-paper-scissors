@@ -87,6 +87,9 @@ let tie_count = 0;
 let losses = document.querySelector('#losses');
 let wins = document.querySelector('#wins');
 let ties = document.querySelector('#ties');
+wins.textContent = 0;
+losses.textContent = 0;
+ties.textContent = 0;
 
 function play_round (e) {
   const computer_choices = document.querySelectorAll('.computer_buttons *');

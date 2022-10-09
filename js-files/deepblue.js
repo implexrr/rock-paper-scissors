@@ -87,6 +87,9 @@ let tie_count = 0;
 let losses = document.querySelector('#losses');
 let wins = document.querySelector('#wins');
 let ties = document.querySelector('#ties');
+wins.textContent = 0;
+losses.textContent = 0;
+ties.textContent = 0;
 
 function play_round (e) {
   const computer_choices = document.querySelectorAll('.computer_buttons *');
@@ -101,13 +104,12 @@ function play_round (e) {
 
   e.target.classList.add('chosen');
   let player_choice = e.target.textContent;
-  let computer_choice = Math.floor((Math.random() * 3));
 
-  if (computer_choice == 0) {
+  if (player_choice == 'Scissors') {
     const computer_rock = document.querySelector('.computer_buttons .rock');
     computer_rock.classList.add('chosen');
   }
-  else if (computer_choice == 1) {
+  else if (player_choice == 'Rock') {
     const computer_paper = document.querySelector('.computer_buttons .paper');
     computer_paper.classList.add('chosen');
   }
@@ -115,59 +117,8 @@ function play_round (e) {
     const computer_scissors = document.querySelector('.computer_buttons .scissors');
     computer_scissors.classList.add('chosen');
   }
-  /*
-  console.log(`Player chose ${player_choice}`);
-  console.log(`Computer chose ${computer_choice}`);
-  console.log(typeof('Rock'));
-  console.log(typeof(player_choice));
-  console.log(player_choice == 'Rock');
-  console.log(player_choice);
-  console.log('Rock');
-  */
-  if (player_choice == 'Rock') {
-    if (computer_choice == 0) {
-      console.log('tie');
-      tie_count++;
-    }
-    else if (computer_choice == 1) {
-      console.log('lose');
-      loss_count++;
-    }
-    else {
-      console.log('win');
-      win_count++;
-    }
-  }
-  else if (player_choice == 'Paper') {
-    if (computer_choice == 0) {
-      console.log('win');
-      win_count++;
-    }
-    else if (computer_choice == 1) {
-      console.log('tie');
-      tie_count++;
-    }
-    else {
-      console.log('lose');
-      loss_count++;
-    }
-  }
-  else if (player_choice == 'Scissors') {
-    if (computer_choice == 0) {
-      console.log('lose');
-      loss_count++;
-    }
-    else if (computer_choice == 1) {
-      console.log('win');
-      win_count++;
-    }
-    else {
-      console.log('tie');
-      tie_count++;
-    }
-  }
-  wins.textContent = win_count;
+
+  loss_count++;
   losses.textContent = loss_count;
-  ties.textContent = tie_count;
 }
 
