@@ -10,6 +10,7 @@ a_true_challenge.addEventListener('click', redirect_gg_no_re);
 function warning (e) {
   e.target.classList.add('computer_text', 'warning');
   e.target.textContent = 'Are you sure you wanna catch these robo-hands?';
+  e.target.style.fontSize = '15px';
 }
 
 
