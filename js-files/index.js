@@ -110,5 +110,5 @@ function redirect_rickroll (e) {
 
 // Redirect player to rock-paper-scissors game
 function redirect_play(e) {
-  location.href = "/html-files/rps.html";
+  location.href = "/rock-paper-scissors/html-files/rps.html";
 }
