@@ -1,23 +1,16 @@
 const a_true_challenge = document.querySelector('#deep_blue');
-deep_blue.addEventListener('mouseover', warning);
-deep_blue.addEventListener('mouseout', redact_warning);
-deep_blue.addEventListener('click', gg_no_re);
+a_true_challenge.addEventListener('mouseover', warning);
+a_true_challenge.addEventListener('mouseout', redact_warning);
+a_true_challenge.addEventListener('click', gg_no_re);
 
 function warning (e) {
+  e.target.classList.add('computer_text', 'warning');
   e.target.textContent = 'Coward.';
-  e.target.style.backgroundImage = "url('/images/uwotm8.png')";
-  e.target.style.backgroundSize = "100% 100%";
-  e.target.classList.add("computer_text");
-  e.target.style.boxShadow = "inset 0 0 0 1000px rgba(0,0,0,.3)";
-  e.target.style.color = "white";
 }
 
 function redact_warning (e) {
-  e.target.textContent = 'Take me back please!';
-  e.target.style.backgroundImage = "none";
-  e.target.classList.remove("computer_text");
-  e.target.style.color = "black";
-  e.target.style.boxShadow = "inset 0 0 0 1000px rgba(0,0,0,0)";
+  e.target.classList.remove('computer_text', 'warning');
+  e.target.textContent = "This is too hard, take me back please :'(";
 }
 
 function gg_no_re (e) {
@@ -34,12 +27,12 @@ for (let i = 0; i < player_buttons.length; i++) {
 }
 
 function is_allowed (e) {
-  let duel = document.querySelector('.duel');
-  let results = document.querySelector('.results');
-  let body = document.querySelector('body');
-  
-  let response = document.createElement("img");
-  let response_msg = document.createElement("div");
+  const duel = document.querySelector('.duel');
+  const results = document.querySelector('.results');
+  const body = document.querySelector('body');
+  const response = document.createElement("img");
+  const response_msg = document.createElement("div");
+
   if ((e.target.parentNode.classList[0]) == 'computer_buttons') {
     response.src = "/gifs/angry_bender.gif";
     response_msg.textContent = "HEY! You're not allowed to make my choice for me >:(";
@@ -84,17 +77,14 @@ function is_allowed (e) {
 let win_count = 0;
 let loss_count = 0;
 let tie_count = 0;
-let losses = document.querySelector('#losses');
-let wins = document.querySelector('#wins');
-let ties = document.querySelector('#ties');
+const losses = document.querySelector('#losses');
+const wins = document.querySelector('#wins');
+const ties = document.querySelector('#ties');
 wins.textContent = 0;
 losses.textContent = 0;
 ties.textContent = 0;
 
 function play_round (e) {
-  const computer_choices = document.querySelectorAll('.computer_buttons *');
-  const player_choices = document.querySelectorAll('.player_buttons *');
-
   for (let i = 0; i < computer_buttons.length; i++) {
     computer_buttons[i].classList.remove('chosen');
   }

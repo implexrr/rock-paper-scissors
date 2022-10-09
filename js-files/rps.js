@@ -1,31 +1,33 @@
+// Deep Blue button
+// Add event listeners to deep_blue button
 const a_true_challenge = document.querySelector('#deep_blue');
-deep_blue.addEventListener('mouseover', warning);
-deep_blue.addEventListener('mouseout', redact_warning);
-deep_blue.addEventListener('click', gg_no_re);
+a_true_challenge.addEventListener('mouseover', warning);
+a_true_challenge.addEventListener('mouseout', redact_warning);
+a_true_challenge.addEventListener('click', redirect_gg_no_re);
 
+
+// Warns user about facing Deep Blue
 function warning (e) {
+  e.target.classList.add('computer_text', 'warning');
   e.target.textContent = 'Are you sure you wanna catch these robo-hands?';
-  e.target.style.backgroundImage = "url('/images/uwotm8.png')";
-  e.target.style.backgroundSize = "100% 100%";
-  e.target.classList.add("computer_text");
-  e.target.style.boxShadow = "inset 0 0 0 1000px rgba(0,0,0,.3)";
-  e.target.style.color = "white";
 }
 
+
+// Redacts warning about Deep Blue
 function redact_warning (e) {
+  e.target.classList.remove('computer_text', 'warning');
   e.target.textContent = 'This is too easy. Is there no one else?';
-  e.target.style.backgroundImage = "none";
-  e.target.classList.remove("computer_text");
-  e.target.style.color = "black";
-  e.target.style.boxShadow = "inset 0 0 0 1000px rgba(0,0,0,0)";
 }
 
-function gg_no_re (e) {
-  location.href = "/html-files/deepblue.html";
-}
 
+
+
+// Rock, paper, scissors buttons
+// Select all buttons with rock, paper or scissors on them
 const computer_buttons = document.querySelectorAll('.computer_buttons *');
 const player_buttons= document.querySelectorAll('.player_buttons *');
+
+// Add event listeners to all rock/paper/scissors buttons
 for (let i = 0; i < computer_buttons.length; i++) {
   computer_buttons[i].addEventListener('click', is_allowed);
 }
@@ -33,17 +35,26 @@ for (let i = 0; i < player_buttons.length; i++) {
   player_buttons[i].addEventListener('click', is_allowed);
 }
 
+// Respond with series of images/messages depending on which RPS buttons clicked
 function is_allowed (e) {
-  let duel = document.querySelector('.duel');
-  let results = document.querySelector('.results');
-  let body = document.querySelector('body');
-  
-  let response = document.createElement("img");
-  let response_msg = document.createElement("div");
+  const duel = document.querySelector('.duel');
+  const results = document.querySelector('.results');
+  const body = document.querySelector('body');
+  const response = document.createElement("img");
+  const response_msg = document.createElement("div");
+
+  // Fade out all non-response elements
+  response_msg.classList.add("computer_text");
+  duel.style.display = 'none';
+  results.style.display = 'none';
+  a_true_challenge.style.display = 'none';
+
+  // If user tries to make the computer's RPS choice for it
   if ((e.target.parentNode.classList[0]) == 'computer_buttons') {
     response.src = "/gifs/angry_bender.gif";
     response_msg.textContent = "HEY! You're not allowed to make my choice for me >:(";
   }
+  // Initiate countdown if user makes choice of RPS
   else if ((e.target.parentNode.classList[0]) == 'player_buttons') {
     response.src = "/gifs/bender.gif";
     response_msg.textContent = "Thinking . . .";
@@ -62,15 +73,11 @@ function is_allowed (e) {
     play_round(e);
   }
 
-  response_msg.classList.add("computer_text");
-
-  duel.style.display = 'none';
-  results.style.display = 'none';
-  a_true_challenge.style.display = 'none';
-
   body.appendChild(response);
   body.appendChild(response_msg);
 
+
+  // Fade in all response elements
   setTimeout(() => {
     response.remove();
     response_msg.remove();
@@ -81,6 +88,7 @@ function is_allowed (e) {
 }
 
 
+// Setup for play_round function
 let win_count = 0;
 let loss_count = 0;
 let tie_count = 0;
@@ -91,10 +99,13 @@ wins.textContent = 0;
 losses.textContent = 0;
 ties.textContent = 0;
 
-function play_round (e) {
-  const computer_choices = document.querySelectorAll('.computer_buttons *');
-  const player_choices = document.querySelectorAll('.player_buttons *');
 
+
+
+// Simulate round of RPS
+function play_round (e) {
+  
+  // Remove any currently chosen buttons
   for (let i = 0; i < computer_buttons.length; i++) {
     computer_buttons[i].classList.remove('chosen');
   }
@@ -102,6 +113,7 @@ function play_round (e) {
     player_buttons[i].classList.remove('chosen');
   }
 
+  // Add chosen class to button clicked and computer response
   e.target.classList.add('chosen');
   let player_choice = e.target.textContent;
   let computer_choice = Math.floor((Math.random() * 3));
@@ -118,15 +130,8 @@ function play_round (e) {
     const computer_scissors = document.querySelector('.computer_buttons .scissors');
     computer_scissors.classList.add('chosen');
   }
-  /*
-  console.log(`Player chose ${player_choice}`);
-  console.log(`Computer chose ${computer_choice}`);
-  console.log(typeof('Rock'));
-  console.log(typeof(player_choice));
-  console.log(player_choice == 'Rock');
-  console.log(player_choice);
-  console.log('Rock');
-  */
+
+  // Logic for RPS game
   if (player_choice == 'Rock') {
     if (computer_choice == 0) {
       console.log('tie');
@@ -169,8 +174,14 @@ function play_round (e) {
       tie_count++;
     }
   }
+
+  // Add tallies to results div
   wins.textContent = win_count;
   losses.textContent = loss_count;
   ties.textContent = tie_count;
 }
 
+// Redirections
+function redirect_gg_no_re (e) {
+  location.href = "/html-files/deepblue.html";
+}
