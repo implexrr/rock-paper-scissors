@@ -1,6 +1,6 @@
 # Rock Paper Scissors
 
-Rock Paper Scissors is the first javascript project I created for the Odin Project. The code is very rudimentary and written completely in plain HTML/CSS/Javascript. [Working demo here](https://implexrr.github.io/rock-paper-scissors/). It's not very pretty, but I still felt like I learnt a lot about the HTML/CSS/JS stack creating this project.
+Rock Paper Scissors is the first javascript project I created for the Odin Project. The code is very rudimentary and written completely in plain HTML/CSS/Javascript. [Working demo here](https://implexrr.github.io/rock-paper-scissors/). Since this is the first ever JS project that I created from scratch and on my own, I felt like I learnt a lot about the HTML/CSS/JS stack creating this project.
 
 ![](./rps-demo.png)
 
