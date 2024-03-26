@@ -53,12 +53,12 @@ function is_allowed (e) {
 
   // If user tries to make the computer's RPS choice for it
   if ((e.target.parentNode.classList[0]) == 'computer_buttons') {
-    response.src = "/gifs/angry_bender.gif";
+    response.src = "/rock-paper-scissors/gifs/angry_bender.gif";
     response_msg.textContent = "HEY! You're not allowed to make my choice for me >:(";
   }
   // Initiate countdown if user makes choice of RPS
   else if ((e.target.parentNode.classList[0]) == 'player_buttons') {
-    response.src = "/gifs/bender.gif";
+    response.src = "/rock-paper-scissors/gifs/bender.gif";
     response_msg.textContent = "Thinking . . .";
     setTimeout(() => {
       response_msg.textContent = "Rock . . .";
@@ -189,5 +189,5 @@ function play_round (e) {
 
 // Redirections
 function redirect_gg_no_re (e) {
-  location.href = "/html-files/deepblue.html";
+  location.href = "/rock-paper-scissors/html-files/deepblue.html";
 }
