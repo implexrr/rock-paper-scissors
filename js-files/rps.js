@@ -190,4 +190,4 @@ function play_round (e) {
 // Redirections
 function redirect_gg_no_re (e) {
   location.href = "/rock-paper-scissors/html-files/deepblue.html";
-}
+}//commit test
